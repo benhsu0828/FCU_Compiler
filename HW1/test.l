@@ -17,3 +17,8 @@ int main()
     printf("Total_Num = %d\n",Total_Num);
     return 0;
 }
+/*
+[^;\n]*[;] {
+    printf("Error: %s \n",yytext);  
+}
+    */
