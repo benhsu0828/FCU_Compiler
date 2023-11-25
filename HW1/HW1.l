@@ -21,7 +21,7 @@ int Total_Num=0;
 [a-zA-Z][a-zA-Z0-9_]*[;] {
     printf("ID: %s\n",yytext);
 }
-[a-zA-Z][a-zA-Z0-9_]**/[\n] {
+[a-zA-Z][a-zA-Z0-9_]*/[\n] {
     printf("ID: %s \n",yytext);
 }
 
