@@ -4,32 +4,61 @@ int Total_Num=0;
 %}
 %option noyywrap
 %%
-[;\n]                                   { /* Ignore semicolon and newline */ }
-[-]?[0-9]+; {
+[-]?[0-9]+[;] {
     printf("Integer: %s\n",yytext);
 }
-[-]?[0-9]+/\n {
+[-]?[0-9]+/[\n] {
     printf("Integer: %s\n",yytext);
 }
-[-]?[0-9]+[.][0-9]+; {
+
+[-]?[0-9]+[.][0-9]+[;] {
     printf("Float: %s\n",yytext);
 }
-[-]?[0-9]+[.][0-9]+/\n {
+[-]?[0-9]+[.][0-9]+/[\n] {
     printf("Float: %s\n",yytext);
 }
-[a-zA-Z]([a-zA-Z0-9]*_*)*; {
+
+[a-zA-Z]([a-zA-Z0-9]*_*)*[;] {
     printf("ID: %s\n",yytext);
 }
-[a-zA-Z]([a-zA-Z0-9]*_*)*/\n {
+[a-zA-Z]([a-zA-Z0-9]*_*)*/[\n] {
     printf("ID: %s\n",yytext);
 }
-.+ {
-    printf("Error: %s \n",yytext);
+[_][^;\n]*[;] {
+    printf("Error: %s \n",yytext);  //底線當頭
+}
+[_][^;\n]*/\n {
+    printf("Error: %s \n",yytext);  //底線當頭，最後換行
+}
+
+[0-9]+([a-zA-Z0-9]|[_])[^;\n]*[;] {
+    printf("Error: %s \n",yytext);  //數字當頭，接底線或字母
+}
+[0-9]+([a-zA-Z0-9]|[_])[^;\n]*/\n {
+    printf("Error: %s \n",yytext);  //數字當頭，接底線或字母，最後換行
+}
+
+[.][^;\n]*[;] {
+    printf("Error: %s \n",yytext); //點當頭
+}
+[.][^;\n]*/\n {
+    printf("Error: %s \n",yytext); //點當頭，最後換行
+}
+
+[^;\n]*[.][^;\n]*[.][;] {
+    printf("Error: %s \n",yytext); //有兩個點以上
+}
+[^;\n]*[.][^;\n]*[.]/\n {
+    printf("Error: %s \n",yytext); //有兩個點以上
+}
+
+[;] {
+    printf("Error: %s \n",yytext); //純分號
 }
 \n {}
 %%
 int main()
 {
     yylex();
-    return 0;
+    return 0; 
 }
