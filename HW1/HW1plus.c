@@ -3,6 +3,11 @@
 #include <string.h>
 #define SIZE 1000
 
+int totalInt = 0;
+int totalFloat = 0;
+int totalID = 0;
+int totalError = 0;
+
 int IsInt(char token[]){
     for(int i = 0; i < strlen(token); i++){
         switch (token[i])
@@ -174,15 +179,19 @@ void judgeToken(char token[]) {
     isFloat = IsFloat(token);
     isID = IsID(token);
     if(isInt){
+        totalInt++;
         if(token[strlen(token)-1] == '\n'){printf("Integer: %s", token);}
         else{printf("Integer: %s\n", token);}
     }else if(isFloat){
+        totalFloat++;
         if(token[strlen(token)-1] == '\n')printf("Float: %s", token);
         else{printf("Float: %s\n", token);}
     }else if(isID){
+        totalID++;
         if(token[strlen(token)-1] == '\n')printf("ID: %s", token);
         else{printf("ID: %s\n", token);}
     }else{
+        totalError++;
         if(token[strlen(token)-1] == '\n')printf("Error: %s", token);
         else{printf("Error: %s\n", token);}
     }
@@ -225,5 +234,13 @@ int main() {
     //最後一個token
     judgeToken(token);
     fclose(fp);
+    for(int i = 0; i < 50; i++){
+        printf("*");
+    }
+    printf("\n");
+    printf("Total Integer: %d\n", totalInt);
+    printf("Total Float: %d\n", totalFloat);
+    printf("Total ID: %d\n", totalID);
+    printf("Total Error: %d\n", totalError);
     return 0;
 }
