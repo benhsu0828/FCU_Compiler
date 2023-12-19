@@ -1,21 +1,25 @@
 %{
 #include <stdio.h>
+#include "calc.tab.h"
 %}
 %option noyywrap
 %%
-[0-9]+ {return(DIGIT);}
+[0-9]+ { yylval = atoi(yytext);
+        return(DIGIT);}
 "(" {return(LPAREN);}
 ")" {return(RPAREN);}
 "+" {return(PLUS);}
+"-" {return(MINUS);}
+"*" {return(MULT);}
+"/" {return(DIV);}
+\n {return('\n');}
 
-
-\n {}
 %%
 int main()
 {
     yyparse();
     return 0; 
 }
-int yyerror(chr *msg){
+int yyerror(char *msg){
     printf("ERROR: %s\n",msg);
 }
