@@ -27,12 +27,12 @@ expr : factor PLUS factor
         $$ = $1 - $3;
        printf("%d MINUS %d equals %d\n",$1,$3,$$);
     }
-    | expr PLUS primary
+    | expr PLUS factor 
     {
         $$ = $1 + $3;
        printf("%d plus %d equals %d\n",$1,$3,$$);
     }
-    | expr MINUS primary
+    | expr MINUS factor 
     {
         $$ = $1 - $3;
        printf("%d MINUS %d equals %d\n",$1,$3,$$);
