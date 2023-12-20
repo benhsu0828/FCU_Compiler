@@ -443,7 +443,7 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  5
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  16
+#define YYNRULES  17
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  29
 
@@ -495,8 +495,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    16,    16,    17,    18,    20,    25,    30,    35,    40,
-      45,    50,    55,    60,    64,    68,    72
+       0,    16,    16,    17,    18,    23,    28,    33,    38,    43,
+      48,    53,    58,    63,    68,    73,    77,    81
 };
 #endif
 
@@ -524,7 +524,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-12)
+#define YYPACT_NINF (-8)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -538,9 +538,9 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-     -12,     9,   -12,   -12,     7,    12,    11,    16,    18,    -3,
-     -12,     7,     7,   -12,     7,     7,     7,     7,     7,     7,
-     -12,   -12,   -12,    20,    20,   -12,   -12,   -12,   -12
+      -8,     0,    -8,    -8,     7,    12,     6,    11,    -7,    20,
+      -8,     7,     7,    -8,     7,     7,     7,     7,     7,     7,
+      -8,    21,    21,    21,    21,    -8,    -8,    -8,    -8
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -548,15 +548,15 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       2,     0,     1,    15,     0,     0,     3,     0,    13,     0,
-      16,     0,     0,     4,     0,     0,     0,     0,     0,     0,
-      14,     7,     8,     5,     6,    11,    12,     9,    10
+       2,     0,     1,    16,     0,     0,     3,     9,    14,     0,
+      17,     0,     0,     4,     0,     0,     0,     0,     0,     0,
+      15,     7,     8,     5,     6,    12,    13,    10,    11
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -12,   -12,    26,     5,   -11
+      -8,    -8,    24,    -6,     5
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -570,18 +570,18 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      21,    22,    20,    11,    12,    25,    26,    27,    28,     2,
-       3,     4,     3,     4,     5,    10,     5,    11,    12,    23,
-      24,    13,    14,    15,    16,    17,    18,    19,    16,    17,
-       9
+       2,    18,    19,     3,     4,    21,    22,     5,    23,    24,
+       3,     4,    11,    12,     5,    10,    13,    14,    15,    16,
+      17,    25,    26,    27,    28,    20,    11,    12,     9,    16,
+      17
 };
 
 static const yytype_int8 yycheck[] =
 {
-      11,    12,     5,     6,     7,    16,    17,    18,    19,     0,
-       3,     4,     3,     4,     7,     3,     7,     6,     7,    14,
-      15,    10,     6,     7,     8,     9,     8,     9,     8,     9,
-       4
+       0,     8,     9,     3,     4,    11,    12,     7,    14,    15,
+       3,     4,     6,     7,     7,     3,    10,     6,     7,     8,
+       9,    16,    17,    18,    19,     5,     6,     7,     4,     8,
+       9
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -590,21 +590,21 @@ static const yytype_int8 yystos[] =
 {
        0,    12,     0,     3,     4,     7,    13,    14,    15,    13,
        3,     6,     7,    10,     6,     7,     8,     9,     8,     9,
-       5,    15,    15,    14,    14,    15,    15,    15,    15
+       5,    14,    14,    14,    14,    15,    15,    15,    15
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    11,    12,    12,    12,    13,    13,    13,    13,    14,
-      14,    14,    14,    14,    15,    15,    15
+       0,    11,    12,    12,    12,    13,    13,    13,    13,    13,
+      14,    14,    14,    14,    14,    15,    15,    15
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     0,     2,     3,     3,     3,     3,     3,     3,
-       3,     3,     3,     1,     3,     1,     2
+       0,     2,     0,     2,     3,     3,     3,     3,     3,     1,
+       3,     3,     3,     3,     1,     3,     1,     2
 };
 
 
@@ -1067,95 +1067,95 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
+  case 4: /* list: list expr '\n'  */
+#line 19 "calc.y"
+    {
+        printf("ANS is: %d\n\n",yyvsp[-1]);
+    }
+#line 1076 "calc.tab.c"
+    break;
+
   case 5: /* expr: factor PLUS factor  */
-#line 21 "calc.y"
+#line 24 "calc.y"
     {
         yyval = yyvsp[-2] + yyvsp[0];
         printf("%d plus %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1077 "calc.tab.c"
+#line 1085 "calc.tab.c"
     break;
 
   case 6: /* expr: factor MINUS factor  */
-#line 26 "calc.y"
+#line 29 "calc.y"
     {
         yyval = yyvsp[-2] - yyvsp[0];
        printf("%d MINUS %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1086 "calc.tab.c"
+#line 1094 "calc.tab.c"
     break;
 
-  case 7: /* expr: expr PLUS primary  */
-#line 31 "calc.y"
+  case 7: /* expr: expr PLUS factor  */
+#line 34 "calc.y"
     {
         yyval = yyvsp[-2] + yyvsp[0];
        printf("%d plus %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1095 "calc.tab.c"
+#line 1103 "calc.tab.c"
     break;
 
-  case 8: /* expr: expr MINUS primary  */
-#line 36 "calc.y"
+  case 8: /* expr: expr MINUS factor  */
+#line 39 "calc.y"
     {
         yyval = yyvsp[-2] - yyvsp[0];
        printf("%d MINUS %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1104 "calc.tab.c"
+#line 1112 "calc.tab.c"
     break;
 
-  case 9: /* factor: primary MULT primary  */
-#line 41 "calc.y"
+  case 9: /* expr: factor  */
+#line 44 "calc.y"
+    {
+        yyval = yyvsp[0];
+    }
+#line 1120 "calc.tab.c"
+    break;
+
+  case 10: /* factor: primary MULT primary  */
+#line 49 "calc.y"
     {
         yyval = yyvsp[-2] * yyvsp[0];
         printf("%d MULT %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1113 "calc.tab.c"
+#line 1129 "calc.tab.c"
     break;
 
-  case 10: /* factor: primary DIV primary  */
-#line 46 "calc.y"
+  case 11: /* factor: primary DIV primary  */
+#line 54 "calc.y"
     {
         yyval = yyvsp[-2] / yyvsp[0];
        printf("%d DIV %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1122 "calc.tab.c"
+#line 1138 "calc.tab.c"
     break;
 
-  case 11: /* factor: factor MULT primary  */
-#line 51 "calc.y"
+  case 12: /* factor: factor MULT primary  */
+#line 59 "calc.y"
     {
         yyval = yyvsp[-2] * yyvsp[0];
        printf("%d MULT %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1131 "calc.tab.c"
+#line 1147 "calc.tab.c"
     break;
 
-  case 12: /* factor: factor DIV primary  */
-#line 56 "calc.y"
+  case 13: /* factor: factor DIV primary  */
+#line 64 "calc.y"
     {
         yyval = yyvsp[-2] / yyvsp[0];
        printf("%d DIV %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1140 "calc.tab.c"
-    break;
-
-  case 13: /* factor: primary  */
-#line 61 "calc.y"
-    {
-        yyval = yyvsp[0];
-    }
-#line 1148 "calc.tab.c"
-    break;
-
-  case 14: /* primary: LPAREN expr RPAREN  */
-#line 65 "calc.y"
-    {
-        yyval = yyvsp[-1];
-    }
 #line 1156 "calc.tab.c"
     break;
 
-  case 15: /* primary: DIGIT  */
+  case 14: /* factor: primary  */
 #line 69 "calc.y"
     {
         yyval = yyvsp[0];
@@ -1163,16 +1163,32 @@ yyreduce:
 #line 1164 "calc.tab.c"
     break;
 
-  case 16: /* primary: MINUS DIGIT  */
-#line 73 "calc.y"
+  case 15: /* primary: LPAREN expr RPAREN  */
+#line 74 "calc.y"
     {
-        yyval = -yyvsp[-1];
+        yyval = yyvsp[-1];
     }
 #line 1172 "calc.tab.c"
     break;
 
+  case 16: /* primary: DIGIT  */
+#line 78 "calc.y"
+    {
+        yyval = yyvsp[0];
+    }
+#line 1180 "calc.tab.c"
+    break;
 
-#line 1176 "calc.tab.c"
+  case 17: /* primary: MINUS DIGIT  */
+#line 82 "calc.y"
+    {
+        yyval = -yyvsp[-1];
+    }
+#line 1188 "calc.tab.c"
+    break;
+
+
+#line 1192 "calc.tab.c"
 
       default: break;
     }
@@ -1365,4 +1381,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 76 "calc.y"
+#line 85 "calc.y"
+

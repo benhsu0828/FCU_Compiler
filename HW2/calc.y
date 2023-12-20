@@ -13,9 +13,12 @@
 %start list
 
 %%
-list :
+list : 
     | list expr
     | list expr '\n'
+    {
+        printf("ANS is: %d\n\n",$2);
+    }
     ;
 expr : factor PLUS factor
     {
@@ -37,6 +40,11 @@ expr : factor PLUS factor
         $$ = $1 - $3;
        printf("%d MINUS %d equals %d\n",$1,$3,$$);
     }
+    | factor
+    {
+        $$ = $1;
+    }
+    ;
 factor : primary MULT primary
     {
         $$ = $1 * $3;
@@ -61,6 +69,7 @@ factor : primary MULT primary
     {
         $$ = $1;
     }
+    ;
 primary : LPAREN expr RPAREN
     {
         $$ = $2;

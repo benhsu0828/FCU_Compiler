@@ -449,9 +449,10 @@ char *yytext;
 #line 1 "HW2.l"
 #line 2 "HW2.l"
 #include <stdio.h>
+#include <stdlib.h>
 #include "calc.tab.h"
-#line 453 "lex.yy.c"
 #line 454 "lex.yy.c"
+#line 455 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -668,9 +669,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "HW2.l"
+#line 7 "HW2.l"
 
-#line 673 "lex.yy.c"
+#line 674 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -729,52 +730,52 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "HW2.l"
+#line 8 "HW2.l"
 { yylval = atoi(yytext);
         return(DIGIT);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "HW2.l"
+#line 10 "HW2.l"
 {return(LPAREN);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "HW2.l"
+#line 11 "HW2.l"
 {return(RPAREN);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "HW2.l"
+#line 12 "HW2.l"
 {return(PLUS);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "HW2.l"
+#line 13 "HW2.l"
 {return(MINUS);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "HW2.l"
+#line 14 "HW2.l"
 {return(MULT);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "HW2.l"
+#line 15 "HW2.l"
 {return(DIV);}
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 15 "HW2.l"
+#line 16 "HW2.l"
 {return('\n');}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 17 "HW2.l"
+#line 18 "HW2.l"
 ECHO;
 	YY_BREAK
-#line 777 "lex.yy.c"
+#line 778 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1779,7 +1780,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "HW2.l"
+#line 18 "HW2.l"
 
 int main()
 {
