@@ -15,6 +15,9 @@
 %%
 list : 
     | list expr
+    {
+        printf("ANS is: %d\n\n",$2);
+    }
     | list expr '\n'
     {
         printf("ANS is: %d\n\n",$2);
@@ -80,6 +83,6 @@ primary : LPAREN expr RPAREN
     }
     | MINUS DIGIT
     {
-        $$ = -$1;
+        $$ = -$2;
     }
 %%

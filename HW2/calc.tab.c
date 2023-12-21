@@ -495,8 +495,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    16,    16,    17,    18,    23,    28,    33,    38,    43,
-      48,    53,    58,    63,    68,    73,    77,    81
+       0,    16,    16,    17,    21,    26,    31,    36,    41,    46,
+      51,    56,    61,    66,    71,    76,    80,    84
 };
 #endif
 
@@ -1067,128 +1067,136 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 4: /* list: list expr '\n'  */
-#line 19 "calc.y"
+  case 3: /* list: list expr  */
+#line 18 "calc.y"
     {
-        printf("ANS is: %d\n\n",yyvsp[-1]);
+        printf("ANS is: %d\n\n",yyvsp[0]);
     }
 #line 1076 "calc.tab.c"
     break;
 
+  case 4: /* list: list expr '\n'  */
+#line 22 "calc.y"
+    {
+        printf("ANS is: %d\n\n",yyvsp[-1]);
+    }
+#line 1084 "calc.tab.c"
+    break;
+
   case 5: /* expr: factor PLUS factor  */
-#line 24 "calc.y"
+#line 27 "calc.y"
     {
         yyval = yyvsp[-2] + yyvsp[0];
         printf("%d plus %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1085 "calc.tab.c"
+#line 1093 "calc.tab.c"
     break;
 
   case 6: /* expr: factor MINUS factor  */
-#line 29 "calc.y"
+#line 32 "calc.y"
     {
         yyval = yyvsp[-2] - yyvsp[0];
        printf("%d MINUS %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1094 "calc.tab.c"
+#line 1102 "calc.tab.c"
     break;
 
   case 7: /* expr: expr PLUS factor  */
-#line 34 "calc.y"
+#line 37 "calc.y"
     {
         yyval = yyvsp[-2] + yyvsp[0];
        printf("%d plus %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1103 "calc.tab.c"
+#line 1111 "calc.tab.c"
     break;
 
   case 8: /* expr: expr MINUS factor  */
-#line 39 "calc.y"
+#line 42 "calc.y"
     {
         yyval = yyvsp[-2] - yyvsp[0];
        printf("%d MINUS %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1112 "calc.tab.c"
-    break;
-
-  case 9: /* expr: factor  */
-#line 44 "calc.y"
-    {
-        yyval = yyvsp[0];
-    }
 #line 1120 "calc.tab.c"
     break;
 
+  case 9: /* expr: factor  */
+#line 47 "calc.y"
+    {
+        yyval = yyvsp[0];
+    }
+#line 1128 "calc.tab.c"
+    break;
+
   case 10: /* factor: primary MULT primary  */
-#line 49 "calc.y"
+#line 52 "calc.y"
     {
         yyval = yyvsp[-2] * yyvsp[0];
         printf("%d MULT %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1129 "calc.tab.c"
+#line 1137 "calc.tab.c"
     break;
 
   case 11: /* factor: primary DIV primary  */
-#line 54 "calc.y"
+#line 57 "calc.y"
     {
         yyval = yyvsp[-2] / yyvsp[0];
        printf("%d DIV %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1138 "calc.tab.c"
+#line 1146 "calc.tab.c"
     break;
 
   case 12: /* factor: factor MULT primary  */
-#line 59 "calc.y"
+#line 62 "calc.y"
     {
         yyval = yyvsp[-2] * yyvsp[0];
        printf("%d MULT %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1147 "calc.tab.c"
+#line 1155 "calc.tab.c"
     break;
 
   case 13: /* factor: factor DIV primary  */
-#line 64 "calc.y"
+#line 67 "calc.y"
     {
         yyval = yyvsp[-2] / yyvsp[0];
        printf("%d DIV %d equals %d\n",yyvsp[-2],yyvsp[0],yyval);
     }
-#line 1156 "calc.tab.c"
-    break;
-
-  case 14: /* factor: primary  */
-#line 69 "calc.y"
-    {
-        yyval = yyvsp[0];
-    }
 #line 1164 "calc.tab.c"
     break;
 
-  case 15: /* primary: LPAREN expr RPAREN  */
-#line 74 "calc.y"
+  case 14: /* factor: primary  */
+#line 72 "calc.y"
     {
-        yyval = yyvsp[-1];
+        yyval = yyvsp[0];
     }
 #line 1172 "calc.tab.c"
     break;
 
-  case 16: /* primary: DIGIT  */
-#line 78 "calc.y"
+  case 15: /* primary: LPAREN expr RPAREN  */
+#line 77 "calc.y"
     {
-        yyval = yyvsp[0];
+        yyval = yyvsp[-1];
     }
 #line 1180 "calc.tab.c"
     break;
 
-  case 17: /* primary: MINUS DIGIT  */
-#line 82 "calc.y"
+  case 16: /* primary: DIGIT  */
+#line 81 "calc.y"
     {
-        yyval = -yyvsp[-1];
+        yyval = yyvsp[0];
     }
 #line 1188 "calc.tab.c"
     break;
 
+  case 17: /* primary: MINUS DIGIT  */
+#line 85 "calc.y"
+    {
+        yyval = -yyvsp[0];
+    }
+#line 1196 "calc.tab.c"
+    break;
 
-#line 1192 "calc.tab.c"
+
+#line 1200 "calc.tab.c"
 
       default: break;
     }
@@ -1381,5 +1389,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 85 "calc.y"
+#line 88 "calc.y"
 
